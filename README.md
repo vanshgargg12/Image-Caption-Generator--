@@ -1,133 +1,162 @@
-# Image-Caption-Generator--
+# 🖼️ Image Caption Generator using Deep Learning (CNN + LSTM)
 
-🖼️ Image Caption Generator using Deep Learning (CNN–RNN)
+An end-to-end **Image Caption Generation** system built using **Deep Learning**, combining **CNN-based feature extraction** and **LSTM-based sequence modeling**, with an interactive **Gradio web interface** for real-time caption generation.
 
-An end-to-end Image Caption Generation system built using Deep Learning, combining CNN-based feature extraction and RNN-based sequence modeling, with an interactive Gradio web interface for real-time caption generation.
+---
 
-📌 Project Overview
+## 📌 Project Overview
 
-This project automatically generates natural language captions for input images.
-It uses a pretrained CNN (VGG16) to extract visual features from images and an LSTM-based RNN to generate meaningful captions word by word.
+This project automatically generates **natural language captions** for images.  
+It uses a **pretrained VGG16 CNN** to extract visual features and an **LSTM-based language model** to generate meaningful captions word by word.
 
-The system is designed as:
-A research/academic project
-A GitHub portfolio project
-A deployable demo using Gradio
+The project is designed to be:
+- 📊 Academically strong (AIML / Deep Learning concepts)
+- 💼 Resume & GitHub worthy
+- 🌐 Easily deployable using **Gradio**
 
-🚀 Key Features
-🧠 Deep Learning–based caption generation
-🖼️ Image feature extraction using VGG16
-🔁 Sequence modeling with LSTM
-🧾 Tokenization & padding for text processing
-🌐 Interactive Gradio UI
-📦 Modular and reusable code
-✅ Easy to run and extend
+---
 
-🏗️ Architecture
+## 🚀 Key Features
+
+- CNN + RNN based Image Captioning
+- Pretrained **VGG16** for image feature extraction
+- **LSTM** for sequence prediction
+- Tokenization & padding for text processing
+- Interactive **Gradio UI**
+- Clean and modular inference pipeline
+- Easy to extend with new datasets or models
+
+---
+
+## 🧠 Model Architecture
+
 Input Image
-     ↓
-CNN (VGG16)
-     ↓
+↓
+VGG16 (CNN)
+↓
 Image Feature Vector
-     ↓
+↓
 Embedding Layer
-     ↓
-LSTM Decoder
-     ↓
+↓
+LSTM Network
+↓
+Dense + Softmax
+↓
 Generated Caption
 
-🛠️ Tech Stack
-Python 3
-TensorFlow / Keras
-NumPy
-Pickle
-Gradio
-VGG16 (Pretrained CNN)
+yaml
+Copy code
 
-📂 Project Structure
-├── image_caption_generatorAIML.ipynb   # Model logic & caption generation
-├── gradio.ipynb                        # Gradio web interface
-├── tokenizer.pkl                       # Saved tokenizer
-├── model.h5                            # Trained captioning model
-├── README.md                           # Project documentation
-└── requirements.txt                    # Dependencies
+---
 
-📊 Dataset Used
-Flickr8k Dataset
-~8,000 images
+## 🗂️ Project Structure
 
-Each image has 5 human-annotated captions
-Widely used for image captioning research
-Note: Due to size constraints, the dataset is not included in this repository.
+├── image_caption_generatorAIML.ipynb # Model logic & caption generation
+├── gradio.ipynb # Gradio web interface
+├── tokenizer.pkl # Saved tokenizer
+├── model.h5 # Trained captioning model
+├── README.md # Project documentation
 
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/image-caption-generator.git
+yaml
+Copy code
+
+---
+
+## 📚 Dataset
+
+- **Flickr8k Dataset**
+- Each image has **5 human-written captions**
+- Used for training and evaluating the captioning model
+
+> Dataset is not included due to size constraints.
+
+---
+
+## ⚙️ Technologies Used
+
+- **Python 3**
+- **TensorFlow / Keras**
+- **NumPy**
+- **Gradio**
+- **VGG16 (Transfer Learning)**
+- **LSTM (Sequence Modeling)**
+
+---
+
+## 🧪 How It Works
+
+1. Upload an image
+2. Image is preprocessed and passed to **VGG16**
+3. Extracted features are fed into the trained model
+4. Caption is generated one word at a time
+5. Final caption is displayed via Gradio UI
+
+---
+
+## ▶️ How to Run the Project
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/vanshgargg12/image-caption-generator.git
 cd image-caption-generator
-
 2️⃣ Install Dependencies
-pip install -r requirements.txt
+bash
+Copy code
+pip install tensorflow numpy pillow gradio
+3️⃣ Run Gradio Interface
+Open and run:
 
-3️⃣ Required Files
-
-Ensure the following files are present:
-model.h5
-tokenizer.pkl
-(These are generated after training or provided separately.)
-
-▶️ Running the Project
-🔹 Run Caption Generator Notebook
-
-Open and execute:
-image_caption_generatorAIML.ipynb
-🔹 Launch Gradio Web App
-
-Run:
+bash
+Copy code
 gradio.ipynb
+OR run directly from notebook cells.
 
-
-You will get a browser-based UI where you can upload an image and receive a caption instantly.
-
-🧪 Sample Output
-Input Image	Generated Caption
-🏞️ Image --	"a dog is running through the grass"
-
-🧠 Model Details
-CNN: VGG16 (ImageNet pretrained, top layers removed)
-RNN: LSTM
-Embedding Dimension: 256
-Optimizer: Adam
-Loss Function: Categorical Crossentropy
-
-🎯 Use Cases
+🖥️ Sample Output
+pgsql
+Copy code
+Input Image: A dog running on the beach
+Generated Caption: "a dog is running through the sand"
+📌 Use Cases
 Assistive technology for visually impaired users
-Automated image tagging
-Social media content generation
-AI-based content understanding
-Academic research and learning
 
-📌 Limitations
-Limited vocabulary (dataset dependent)
-Performance constrained by dataset size
-Works best on common objects/scenes
-🔮 Future Enhancements
-🔄 Replace VGG16 with ResNet / EfficientNet
-🧠 Add Attention Mechanism
-🌍 Multilingual caption generation
-☁️ Cloud deployment (Hugging Face / AWS)
-📱 Mobile-friendly interface
+Image search and indexing
+
+Social media automation
+
+Content moderation and tagging
+
+AI-powered photo description tools
+
+📈 Future Improvements
+Use ResNet/Inception instead of VGG16
+
+Add BLEU score evaluation
+
+Train on Flickr30k / MS-COCO
+
+Deploy on Hugging Face Spaces
+
+Add multilingual caption support
 
 👨‍💻 Author
 Vansh Garg
-Computer Science Student | AIML & Data Science Enthusiast
+Computer Science | DATA SCIENCE
+UPES Dehradun
 
-Snehil Kanaujia 
-Computer Science Student | AIML & Data Science Enthusiast
+Snehil Kanaujia
+Computer Science | AIML
+UPES Dehradun
+
 
 ⭐ Acknowledgements
-Flickr8k Dataset creators
-TensorFlow & Keras documentation
-Gradio team
+Flickr8k Dataset
+
+TensorFlow & Keras Documentation
+
+Gradio Team
 
 📜 License
-This project is intended for educational and research purposes.
+This project is licensed under the MIT License.
+You are free to use, modify, and distribute it.
+
+⭐ If you like this project, don’t forget to star the repository!
